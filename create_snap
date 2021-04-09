@@ -1,0 +1,1 @@
+get-vm | where{$_.PowerState -eq 'PoweredOn' -and $_.Guest.OSFullName -match 'Windows'} | new-snapshot -Name "BeforeUpdate410" -Description "Before Update 4-10-21" -Quiesce -Memory:$false
